@@ -1,9 +1,12 @@
 pipeline {
-  agent any
+  agent {
+    user 'jenkins'
+    group 'jenkins'
+  }
   stages {
     stage('Run Tests') {
       steps {
-        sh 'sudo ./mvnw clean test'
+        sh './mvnw clean test'
       }
     }
   }
