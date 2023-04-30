@@ -6,6 +6,11 @@ pipeline {
         sh 'chmod +x mvnw'
         sh './mvnw clean test'
       }
-    }
+      post {
+        always {
+          junit '**/surefire-reports/*.xml'
+        }
+      }
+    } 
   }
 }
