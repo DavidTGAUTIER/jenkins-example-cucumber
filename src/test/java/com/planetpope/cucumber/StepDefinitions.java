@@ -20,7 +20,7 @@ public class StepDefinitions {
     }
     @When("x and y are added")
     public void x_and_y_are_added() {
-        Calculator calc = New Calculator();
+        Calculator calc = new Calculator();
         sum = calc.add(x,y);
     }
     @Then("the value should be {int}")
